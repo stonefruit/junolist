@@ -1,0 +1,77 @@
+table Task {
+  id string
+  name string
+  content string
+  priority number
+  plannedStartDate number
+  plannedEndDate number
+  actualStartDate number
+  actualEndDate number
+  createdAt number
+  modifiedAt number
+}
+
+table TaskVersion {
+  id string
+  taskId string [ref: > Task.id]
+  name string
+  content string
+  priority number
+  plannedStartDate number
+  plannedEndDate number
+  actualStartDate number
+  actualEndDate number
+  createdAt number
+  modifiedAt number
+}
+
+table TagTask {
+  id string
+  tagId string [ref: > Tag.id]
+  taskId string [ref: > Task.id]
+  order number
+  createdAt number
+  modifiedAt number
+}
+
+table Tag {
+  id string
+  name string
+  createdAt number
+  modifiedAt number
+}
+
+table Filter {
+  id string
+  name string
+  stringMatch string
+  tags string[]
+  order number
+  createdAt number
+  modifiedAt number
+}
+
+table PrecedingTask {
+  id string
+  taskId string [ref: > Task.id]
+  precedingTaskId string [ref: > Task.id]
+  createdAt number
+  modifiedAt number
+}
+
+table Folder {
+  id string
+  name string
+  description string
+  createdAt number
+  modifiedAt number
+}
+
+table FolderTask {
+  id string
+  taskId string [ref: > Task.id]
+  folderId string [ref: > Folder.id]
+  order number
+  createdAt number
+  modifiedAt number
+}
