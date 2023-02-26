@@ -5,9 +5,11 @@ import './index.css'
 import App from './App'
 // import './models/testDexie'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+window.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  )
+})

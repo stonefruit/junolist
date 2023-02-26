@@ -10,4 +10,10 @@ else
 fi
 
 mkdir -p builds
-cp build/index.html builds/junolist.html && rm -rf build
+
+# For serving with http-server
+cp build/index.html builds/index.html 
+
+cp build/index.html builds/junolist.html 
+
+rm -rf build
